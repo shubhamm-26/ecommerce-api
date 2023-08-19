@@ -17,7 +17,7 @@ const productSchema = new Schema({
         required: [true, 'Price is required!'],
         trim: true
     },
-    categoryId: {
+    category: {
         type: Schema.Types.ObjectId,
         ref: 'Category',
         required: [true, 'Category is required!']
@@ -26,7 +26,6 @@ const productSchema = new Schema({
         type: Boolean,
         default: true
     },
-
     });
 
 const Product = mongoose.model('Product', productSchema);

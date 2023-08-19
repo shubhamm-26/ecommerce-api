@@ -7,11 +7,6 @@ const categorySchema = new Schema({
         required: [true, 'Name is required!'],
         trim: true,
         unique: true
-    },
-    description: {
-        type: String,
-        required: [true, 'Description is required!'],
-        trim: true
     }
 });
 

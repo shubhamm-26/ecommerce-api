@@ -7,7 +7,6 @@ const userSchema = new Schema({
         type: String,
         required: [true, 'Name is required!'],
         trim: true,
-
     },
     email: {
         type: String,
@@ -27,6 +26,10 @@ const userSchema = new Schema({
         trim: true,
         minlength: [6, 'Password must be at least 6 characters long!']
     },
+    role: {
+        type: String,
+        default: 'user'
+    }
     });
 
 const User = mongoose.model('User', userSchema);
