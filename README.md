@@ -1,4 +1,3 @@
-
 # Ecommerce API with Node.js
 
 This project implements an Ecommerce API to support various e-commerce operations such as product and category listing, product details, cart management, order processing, user authentication, and more.
@@ -54,7 +53,116 @@ This project implements an Ecommerce API to support various e-commerce operation
 
 ## API Endpoints
 
-- ... (List the API endpoints as previously described)
+### User
+
+- **Register User:**
+  - **Endpoint:** `POST /auth/register`
+  - **Body:**
+    ```json
+    {
+        "name": "shubham",
+        "email": "shubham@gmail.com",
+        "password": "shubham123"
+    }
+    ```
+
+- **Login User:**
+  - **Endpoint:** `POST /auth/login`
+  - **Body:**
+    ```json
+    {
+        "email": "shubham@gmail.com",
+        "password": "shubham123"
+    }
+    ```
+
+### Product
+
+- **Create Product:**
+  - **Endpoint:** `POST /products/`
+  - **Request Headers:** Authorization Bearer Token
+  - **Body:**
+    ```json
+    {
+        "name": "charger",
+        "description": "c-type",
+        "price": 1000,
+        "category":"Electronics",
+        "available":true
+    }
+    ```
+
+- **Get All Products:**
+  - **Endpoint:** `GET /products/`
+
+- **Get Products by Category:**
+  - **Endpoint:** `GET /products/category/:categoryId`
+
+- **Update Product:**
+  - **Endpoint:** `PUT /products/update/64e0a7c5b4beafcfbad383a9`
+  - **Request Headers:** Authorization Bearer Token
+  - **Body:**
+    ```json
+    {
+        "name": "charger",
+        "description": "c-type",
+        "price": 1500,
+        "category": "64dfab95c279be34f2b8a07e",
+        "available": true
+    }
+    ```
+
+- **Delete Product:**
+  - **Endpoint:** `DELETE /products/delete/64e0a7c5b4beafcfbad383a9`
+  - **Request Headers:** Authorization Bearer Token
+
+### Cart
+
+- **Add to Cart:**
+  - **Endpoint:** `POST /cart/`
+  - **Request Headers:** Authorization Bearer Token
+  - **Body:**
+    ```json
+    {
+        "productId":"64dfab65c279be34f2b8a07a",
+        "quantity":2
+    }
+    ```
+
+- **Get Cart:**
+  - **Endpoint:** `GET /cart/`
+  - **Request Headers:** Authorization Bearer Token
+
+- **Delete from Cart:**
+  - **Endpoint:** `DELETE /cart/`
+  - **Request Headers:** Authorization Bearer Token
+  - **Body:**
+    ```json
+    {
+        "productId":"64dfab65c279be34f2b8a07a"
+    }
+    ```
+
+### Order
+
+- **Place Order:**
+  - **Endpoint:** `POST /orders/`
+  - **Request Headers:** Authorization Bearer Token
+
+- **Get Order:**
+  - **Endpoint:** `GET /orders/`
+  - **Request Headers:** Authorization Bearer Token
+
+### Category
+
+- **Get All Categories:**
+  - **Endpoint:** `GET /category`
+
+- **Get Category by Name:**
+  - **Endpoint:** `GET /category/name/stationery`
+
+
+**Note**: Only users with an admin role can add and delete product listings.
 
 ## Authentication
 
@@ -75,4 +183,3 @@ Rate limiting is implemented to prevent abuse and maintain server stability. Req
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
-```
