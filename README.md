@@ -1,5 +1,4 @@
 
-```markdown
 # Ecommerce API with Node.js
 
 This project implements an Ecommerce API to support various e-commerce operations such as product and category listing, product details, cart management, order processing, user authentication, and more.
