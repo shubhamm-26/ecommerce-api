@@ -1,7 +1,7 @@
 const Order = require('../models/order');
 const Product = require('../models/product');
 const Cart = require('../models/cart');
-const authMiddleware = require('../middleware/authmiddleware');
+const authMiddleware = require('../authmiddleware');
 
 const getOrderHistory = async (req, res) => {
     const userId = req.userData.userId;
