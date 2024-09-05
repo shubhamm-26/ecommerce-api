@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const mongoURI = 'mongodb+srv://shubham:OnqhejQub36Iq2ah@cluster0.w856zo6.mongodb.net/?retryWrites=true&w=majority';
+const mongoURI = 'mongodb+srv://root:root@cluster0.befisj8.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
 mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => console.log('connected to mongodb'))
     .catch((err) =>

@@ -4,7 +4,8 @@ const User = require('../models/user');
 
 const getAllProducts = async (req, res) => {
     try {
-        const products = await Product.find();
+        // populate products with category name
+        const products = await Product.find().populate('category', 'name');
         res.status(200).json(products);
     } catch (error) {
         res.status(404).json({ message: error.message });

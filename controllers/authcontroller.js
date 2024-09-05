@@ -6,9 +6,14 @@ const register = async (req, res) => {
         const { name,email, password } = req.body;
         const role = await determineUserRole(email);
         const user = new User({ name,email, password, role });
+        const existingUser = await User .findOne({ email });
+        if (existingUser) {
+            return res.status(400).json({ error: 'User already exists' });
+        }
         await user.save();
+        const token = jwt.generateToken(user._id);
         console.log("User created");
-        res.status(201).json({user});
+        res.status(201).json({user, token});
     } catch (error) {
         res.status(400).json({ error: error.message });
     }

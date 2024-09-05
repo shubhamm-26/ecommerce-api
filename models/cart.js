@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const cartItemSchema = new Schema({
     productId: {
         type: Schema.Types.ObjectId,
-        ref: 'Product',
+        ref: 'Product', 
         required: [true, 'Product is required!'],
         unique: true
     },
